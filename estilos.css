@@ -1,0 +1,395 @@
+/* ===== VARIABLES DE COLOR (tonos tierra y azules) ===== */
+:root {
+  --crema: #fbf3e4;
+  --tierra-oscuro: #4a2e1a;
+  --terracota: #b5651d;
+  --azul-profundo: #12364d;
+  --azul-lago: #2a6f97;
+  --dorado: #e0a75e;
+  --texto-claro: #fffaf0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
+  background-color: var(--azul-profundo);
+  color: var(--texto-claro);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== BARRA DE NAVEGACIÓN ===== */
+.barra {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 16px 40px;
+  background-color: var(--crema);
+  color: var(--tierra-oscuro);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-principal {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--azul-profundo);
+}
+
+.menu {
+  display: flex;
+  gap: 32px;
+}
+
+.menu a {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.menu a:hover,
+.menu a.activo {
+  color: var(--terracota);
+  border-bottom-color: var(--terracota);
+}
+
+/* ===== HERO (INICIO) ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 24px 60px;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(18, 54, 77, 0.35) 0%,
+      rgba(74, 46, 26, 0.35) 55%,
+      rgba(18, 30, 40, 0.75) 100%
+    ),
+    url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgp2KFAe_UCFP4J2xGSUJrZlvVt5zDSRNdugfr3U5ejgVvif3VngmFKuK3y-PgHHKj7U-qdiKil6Cmu6ggLbUylZGqxwDFVBUe-m3QUEKrpuqBc21c8SRWSz9uvf5Kk9CR0P2majYUhHSw/s1600/lago-calima-la+mellicera.JPG") center / cover no-repeat,
+    linear-gradient(to bottom, #e0a75e 0%, #2a6f97 55%, #12364d 100%);
+}
+
+.hero-contenido {
+  max-width: 900px;
+}
+
+.hero h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: clamp(2.6rem, 7vw, 5.2rem);
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.45);
+}
+
+.subtitulo {
+  margin-top: 28px;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  letter-spacing: 1px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.boton {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 10px 34px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: var(--texto-claro);
+  border: 1px solid var(--dorado);
+  border-radius: 30px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.boton:hover {
+  background-color: var(--dorado);
+  color: var(--tierra-oscuro);
+}
+
+@media (max-width: 800px) {
+  .barra {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+  }
+  .espaciador { display: none; }
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 18px;
+  }
+  .menu a { font-size: 0.8rem; }
+  .hero { padding-top: 150px; }
+}
+
+/* ===== PÁGINAS INTERNAS ===== */
+body.interna {
+  height: auto;
+  min-height: 100%;
+  background-color: var(--crema);
+  color: var(--tierra-oscuro);
+}
+
+.cabecera-pagina {
+  --imagen-fondo: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgp2KFAe_UCFP4J2xGSUJrZlvVt5zDSRNdugfr3U5ejgVvif3VngmFKuK3y-PgHHKj7U-qdiKil6Cmu6ggLbUylZGqxwDFVBUe-m3QUEKrpuqBc21c8SRWSz9uvf5Kk9CR0P2majYUhHSw/s1600/lago-calima-la+mellicera.JPG");
+  padding: 150px 24px 80px;
+  text-align: center;
+  color: var(--texto-claro);
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(18, 54, 77, 0.55) 0%,
+      rgba(74, 46, 26, 0.55) 100%
+    ),
+    var(--imagen-fondo) center / cover no-repeat,
+    linear-gradient(to bottom, #e0a75e 0%, #2a6f97 60%, #12364d 100%);
+}
+
+.cabecera-actividades {
+  --imagen-fondo: url("https://visitvalle.travel/wp-content/uploads/2024/08/deportes-calima-el-darien.webp");
+}
+
+.cabecera-lugares {
+  --imagen-fondo: url("https://static.wixstatic.com/media/1ad7b5_3fcc40ae84d74452bb39520ca6f21c20~mv2.jpg/v1/fill/w_1920,h_2560,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/1ad7b5_3fcc40ae84d74452bb39520ca6f21c20~mv2.jpg");
+}
+
+.cabecera-historia {
+  --imagen-fondo: url("https://lagocalima.com.co/wp-content/uploads/2025/04/del-lago-calima-cesar-trivin204131o.webp");
+}
+
+.cabecera-pagina h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: clamp(2.8rem, 6vw, 4.2rem);
+  line-height: 1.15;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
+}
+
+.cabecera-pagina p {
+  max-width: 640px;
+  margin: 18px auto 0;
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.contenido {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 24px 40px;
+}
+
+.contenido h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 2.2rem;
+  color: var(--azul-profundo);
+  margin-bottom: 14px;
+}
+
+.contenido p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.intro {
+  max-width: 760px;
+  margin-bottom: 40px;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.tarjeta {
+  background-color: #ffffff;
+  border-left: 4px solid var(--terracota);
+  border-radius: 6px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(74, 46, 26, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(74, 46, 26, 0.18);
+}
+
+.tarjeta h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 1.8rem;
+  color: var(--azul-lago);
+  margin-bottom: 10px;
+}
+
+.tarjeta p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.etiqueta {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 4px 14px;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--texto-claro);
+  background-color: var(--terracota);
+  border-radius: 20px;
+}
+
+.linea-tiempo {
+  margin: 20px 0 10px 8px;
+  padding-left: 32px;
+  border-left: 2px solid var(--azul-lago);
+}
+
+.hito {
+  position: relative;
+  margin-bottom: 34px;
+}
+
+.hito::before {
+  content: "";
+  position: absolute;
+  left: -41px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--dorado);
+  border: 3px solid var(--crema);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--azul-lago);
+}
+
+.hito .anio {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--terracota);
+}
+
+.hito h3 {
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: var(--azul-profundo);
+  margin: 2px 0 8px;
+}
+
+.hito p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.navegacion-paginas {
+  max-width: 1000px;
+  margin: 20px auto 0;
+  padding: 0 24px 50px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.navegacion-paginas a {
+  padding: 10px 26px;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  color: var(--azul-profundo);
+  border: 1px solid var(--azul-lago);
+  border-radius: 30px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navegacion-paginas a:hover {
+  background-color: var(--azul-lago);
+  color: var(--texto-claro);
+}
+
+.pie {
+  padding: 26px 24px;
+  text-align: center;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  color: var(--texto-claro);
+  background-color: var(--azul-profundo);
+}
+
+@media (max-width: 800px) {
+  .cabecera-pagina { padding-top: 190px; }
+  .contenido { padding-top: 40px; }
+}
+
+/* ===== FOTOS EN TARJETAS ===== */
+.foto-tarjeta {
+  width: 100%;
+  height: 160px;
+  margin: 0 0 16px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--dorado) 0%, var(--azul-lago) 100%);
+}
+
+.foto-tarjeta img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ===== HITO DESTACADO (evento reciente) ===== */
+.hito-destacado {
+  background-color: #ffffff;
+  border-left: 4px solid var(--azul-lago);
+  border-radius: 6px;
+  padding: 18px 22px;
+  box-shadow: 0 4px 16px rgba(74, 46, 26, 0.1);
+}
+
+.hito-destacado::before {
+  top: 24px;
+  background-color: var(--azul-lago);
+}
+
+.hito-destacado .frase-final {
+  margin-top: 12px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--terracota);
+}
